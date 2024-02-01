@@ -1,25 +1,26 @@
 package FactoryPattern;
 
-
-interface Shape {
-    void draw();
+class Shape {
+    void draw(){
+        System.out.println("Inside Shape::draw() method.");
+    }
 }
 
-class Rectangle implements Shape{
+class Rectangle extends Shape{
     @Override
     public void draw(){
         System.out.println("Inside Rectangle::draw() method.");
     }
 }
 
-class Square implements Shape{
+class Square extends Shape{
     @Override
     public void draw(){
         System.out.println("Inside Square::draw() method.");
     }
 }
 
-class Circle implements Shape{
+class Circle extends Shape{
     @Override
     public void draw(){
         System.out.println("Inside Circle::draw() method.");
@@ -42,7 +43,9 @@ class ShapeFactory{
     }
 }
 
-public class FactoryPattern{
+
+
+public class AbstractFactoryPattern {
     public static void main(String[] args){
             ShapeFactory shapeFactory = new ShapeFactory();
             Shape shape1 = shapeFactory.getShape("CIRCLE");
@@ -50,6 +53,3 @@ public class FactoryPattern{
         
     }
 }
-
-
-
