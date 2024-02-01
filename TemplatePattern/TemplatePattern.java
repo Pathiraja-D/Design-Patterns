@@ -1,18 +1,18 @@
 package TemplatePattern;
 
-interface Game {
-    void initialize();
-    void startPlay();
-    void endPlay();
+abstract class Game {
+    abstract void initialize();
+    abstract void startPlay();
+    abstract void endPlay();
 
-    public default  void play(){
+    public final  void play(){
         initialize();
         startPlay();
         endPlay();
     }
 }
 
-class Cricket implements Game {
+class Cricket extends Game {
     @Override
     public void initialize(){
         System.out.println("Cricket Game Initialized! Start playing.");
@@ -29,7 +29,7 @@ class Cricket implements Game {
     }
 }
 
-class Football implements Game {
+class Football extends Game {
     @Override
     public void initialize(){
         System.out.println("Football Game Initialized! Start playing.");
